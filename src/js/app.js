@@ -30,7 +30,7 @@ import * as flsFunctions from "./files/functions.js";
 /* Добавление loaded для HTML после полной загрузки страницы */
 // flsFunctions.addLoadedClass();
 /* Модуль для работы с меню (Бургер) */
-// flsFunctions.menuInit();
+flsFunctions.menuInit();
 /* Учет плавающей панели на мобильных устройствах при 100vh */
 // flsFunctions.fullVHfix();
 
@@ -147,7 +147,7 @@ flsForms.formFieldsInit({
 Документация плагина: https://swiperjs.com/
 Сниппет(HTML): swiper
 */
-//import "./files/sliders.js";
+import "./files/sliders.js";
 
 // ========================================================================================================================================================================================================================================================
 // Модули работы с прокруткой страницы ========================================================================================================================================================================================================================================================
@@ -191,7 +191,7 @@ import * as flsScroll from "./files/scroll/scroll.js";
 
 // Функционал добавления классов к хедеру при прокрутке
 // Документация: https://template.fls.guru/template-docs/modul-dobavleniya-klassov-k-shapke-pri-prokrutke-stranicy.html
-// flsScroll.headerScroll();
+flsScroll.headerScroll();
 
 // Функционал липкого блока
 // flsScroll.stickyBlock();

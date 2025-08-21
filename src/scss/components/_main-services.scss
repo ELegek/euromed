@@ -1,0 +1,26 @@
+.main-services {
+	&__header {
+	}
+	&__body {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 40px;
+	}
+	&__item {
+		position: relative;
+	}
+	&__media {
+		height: 200px;
+		width: 100%;
+		border-radius: 20px;
+		overflow: hidden;
+		img {
+			min-height: 200px;
+		}
+	}
+	&__name {
+		position: absolute;
+		bottom: 20px;
+		left: 20px;
+	}
+}

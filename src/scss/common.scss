@@ -1,4 +1,79 @@
 // Заголовки, общие БЕМ блоки и прочее...
+.section {
+	margin-top: 100px;
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+		margin-bottom: 37px;
+	}
+}
+.btn {
+	padding: 10px 32px;
+	border-radius: 30px;
+	color: #fff;
+	text-align: center;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 500;
+	transition: all 0.3s ease 0s;
+	display: inline-block;
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #fff;
+		}
+	}
+
+	&-pink {
+		background-color: $accentColor;
+		border: 1px solid $accentColor;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $accentColor;
+			}
+		}
+	}
+
+	&-blue {
+		background-color: $accentColor-2;
+		border: 1px solid $accentColor-2;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $accentColor-2;
+			}
+		}
+	}
+
+	&-search {
+		width: 24px;
+		height: 24px;
+		border: none;
+		padding: 0;
+		color: #2c3071;
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $accentColor;
+			}
+		}
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+svg {
+	width: 100%;
+	height: 100%;
+}
+
 .lazy {
 	position: relative;
 	&::after {
@@ -12,7 +87,7 @@
 		position: absolute;
 		transition: 0.4s ease;
 		visibility: hidden;
-		z-index: 0;
+		z-index: -1;
 	}
 }
 
@@ -71,7 +146,7 @@
 	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
 	position: absolute;
 	top: 50%;
-	background-color: #fff;
+	background-color: #eee;
 	&::before {
 		color: $accentColor;
 	}
