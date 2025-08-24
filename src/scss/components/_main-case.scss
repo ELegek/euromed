@@ -1,0 +1,36 @@
+.main-case {
+	&__body {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 20px;
+
+		@media (max-width: $mobileSmall) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 10px;
+		}
+	}
+}
+
+.case {
+	&__item {
+	}
+	&__media {
+		max-width: 275px;
+		border-radius: 20px;
+		overflow: hidden;
+		picture {
+			aspect-ratio: 1.3;
+
+			img {
+				height: 210px;
+
+				@media (max-width: $mobileSmall) {
+					min-height: 140px;
+					height: 100%;
+				}
+			}
+		}
+	}
+}

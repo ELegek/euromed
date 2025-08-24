@@ -1,0 +1,43 @@
+.action {
+	max-width: 1920px;
+	background: linear-gradient(90deg, rgba(226, 0, 123, 1) 0%, rgba(44, 48, 113, 1) 100%);
+	margin: 100px auto 0;
+	&__body {
+		padding: 60px 0;
+	}
+	&__title {
+		text-align: center;
+		color: #fff;
+		font-size: 48px;
+		font-weight: 700;
+		line-height: 150%;
+		margin-bottom: 20px;
+
+		@media (max-width: $mobile) {
+			font-size: 32px;
+			margin-bottom: 15px;
+		}
+	}
+	&__subtitle {
+		text-align: center;
+		color: #fff;
+		font-size: 20px;
+		line-height: 150%;
+		margin-bottom: 40px;
+
+		@media (max-width: $mobile) {
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+	}
+	&__bottom {
+		display: flex;
+		justify-content: center;
+
+		@media (max-width: $mobileSmall) {
+			.btn-action {
+				width: 100%;
+			}
+		}
+	}
+}
