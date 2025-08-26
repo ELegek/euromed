@@ -1,0 +1,79 @@
+.main-experts {
+	&__slider {
+		position: relative;
+
+		@media (max-width: $mobileSmall) {
+			padding: 0 30px;
+
+			.swiper-button-prev {
+				left: -10px;
+				background-color: transparent;
+			}
+
+			.swiper-button-next {
+				right: -10px;
+				background-color: transparent;
+			}
+		}
+	}
+	&__wrapper {
+	}
+	&__slide {
+	}
+}
+
+.expert-card {
+	position: relative;
+	@media (any-hover: hover) {
+		&:hover {
+			.expert-card__media {
+				img {
+					transform: scale(1.1);
+				}
+			}
+
+			.expert-card__name {
+				color: $accentColor;
+			}
+		}
+	}
+	&__media {
+		margin-bottom: 10px;
+		height: 360px;
+		border-radius: 20px;
+		overflow: hidden;
+
+		@media (max-width: $mobileSmall) {
+			height: auto;
+		}
+		picture {
+			aspect-ratio: 1;
+			img {
+				height: 360px;
+				transition: all 0.3s ease 0s;
+				@media (max-width: $mobileSmall) {
+					height: auto;
+				}
+			}
+		}
+	}
+	&__name {
+		font-size: 20px;
+		font-weight: 600;
+		color: $accentColor-2;
+		margin-bottom: 3px;
+		line-height: 150%;
+		transition: all 0.3s ease 0s;
+		@media (max-width: $mobile) {
+			font-size: 18px;
+		}
+	}
+	&__post {
+		color: #777777;
+		line-height: 150%;
+
+		@media (max-width: $mobile) {
+			font-size: 14px;
+		}
+	}
+}

@@ -1,0 +1,16 @@
+.experts {
+	&__body {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 40px;
+
+		@media (max-width: $tablet) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 20px;
+		}
+
+		@media (max-width: $mobile) {
+			gap: 10px;
+		}
+	}
+}

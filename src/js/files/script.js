@@ -19,3 +19,19 @@ if (btnSearch && searchForm) {
 		}
 	});
 }
+
+document.querySelectorAll(".menu__list .arrow").forEach((arrow) => {
+	arrow.addEventListener("click", (e) => {
+		e.preventDefault();
+		const parentLi = arrow.closest("li");
+		const parentUl = parentLi.parentElement; // текущий список (уровень)
+
+		// закрываем только соседей на этом уровне
+		parentUl.querySelectorAll(":scope > li._open").forEach((li) => {
+			if (li !== parentLi) li.classList.remove("_open");
+		});
+
+		// переключаем текущее
+		parentLi.classList.toggle("_open");
+	});
+});

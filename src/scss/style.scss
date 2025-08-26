@@ -23,7 +23,7 @@
 // По умолчанию шрифт ==============================================================================================================================================================================================================================================================================
 $fontFamily: "Inter";
 $fontSize: 16px; // де 14(px) - розмір шрифту за замовчуванням з макету
-$borderRadius: 5px;
+$borderRadius: 8px;
 // Основные цвета
 $mainColor: #2c2c2c; // Колір шрифту за замовчуванням
 $accentColor: #e2007b;
@@ -46,7 +46,7 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 
 // Брейк-поинты
 $pc: em($containerWidth); // ПК, ноутбуки и некоторые планшеты в горизонтальном положении
-$tablet: 991.98px; // Планшеты, некоторые телефоны в горизонтальном положении
+$tablet: 1023.98px; // Планшеты, некоторые телефоны в горизонтальном положении
 $mobile: 767.98px; // Телефоны L
 $mobileSmall: 479.98px; // Телефоны S
 
@@ -87,10 +87,15 @@ body {
 	// Прижимаем footer
 	> main {
 		flex: 1 1 auto;
+		padding-top: 111px;
+
+		@media (max-width: $tablet) {
+			padding-top: 60px;
+		}
 	}
 	// Фикс для слайдеров
 	> * {
-		min-width: 0;
+		min-width: 375px;
 	}
 }
 // Ограничивающий контейнер ======================================================================================================================================================================================================================
@@ -146,7 +151,7 @@ body {
 // Подключение базовых стилей, шаблонов (заготовок) и вспомогательных классов
 // Для подключения / выключения конкретных стилей смотри base.scss
 @import "base";
-
+@import "hamburgers/_sass/hamburgers/hamburgers";
 // Подключение стилей общих элементов проекта
 @import "common";
 
@@ -156,6 +161,15 @@ body {
 @import "./components/breadcrumbs";
 @import "./components/hero";
 @import "./components/main-services";
+@import "./components/main-experts";
+@import "./components/main-case";
+@import "./components/trust";
+@import "./components/reviews";
+@import "./components/action";
+@import "./components/about";
+@import "./components/experts";
+@import "./components/legal";
+@import "./components/certificates";
 
 // Подключение стилей отдельных страниц
 @import "home";

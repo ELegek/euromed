@@ -1,0 +1,113 @@
+.legal {
+	&__subtitle {
+		font-size: 18px;
+		color: $accentColor-2;
+		font-weight: 600;
+		line-height: 150%;
+		margin-bottom: 20px;
+	}
+	&__body {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 40px;
+		align-items: start;
+		margin-bottom: 100px;
+
+		@media (max-width: $tablet) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 10px;
+			margin-bottom: 60px;
+		}
+
+		@media (max-width: $mobile) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+	&__item {
+		background-color: #f7f7f7;
+		border-radius: 20px;
+		overflow: hidden;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+	&__name {
+		font-size: 18px;
+		color: $accentColor-2;
+		font-weight: 600;
+		line-height: 150%;
+	}
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		li {
+			a {
+				display: flex;
+				align-items: center;
+				gap: 5px;
+				font-size: 14px;
+				transition: all 0.3s ease 0s;
+
+				@media (any-hover: hover) {
+					&:hover {
+						color: $accentColor;
+					}
+				}
+				.icon {
+					flex: 0 0 24px;
+					width: 24px;
+					height: 24px;
+					display: inline-block;
+				}
+			}
+		}
+	}
+	&__post {
+		font-size: 14px;
+	}
+}
+
+.legal-documents {
+	&__body {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 40px;
+		row-gap: 10px;
+
+		@media (max-width: $tablet) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+	&__item {
+		background-color: #f7f7f7;
+		border-radius: 20px;
+		overflow: hidden;
+		padding: 20px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		@media (any-hover: hover) {
+			&:hover {
+				.name {
+					color: $accentColor;
+				}
+			}
+		}
+
+		.name {
+			font-size: 16px;
+			color: $accentColor-2;
+			font-weight: 600;
+			line-height: 150%;
+			transition: all 0.3s ease 0s;
+		}
+		.icon {
+			flex: 0 0 24px;
+			width: 24px;
+			height: 24px;
+			display: inline-block;
+		}
+	}
+}

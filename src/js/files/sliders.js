@@ -24,58 +24,54 @@ import "../../scss/base/swiper.scss";
 // Полный набор стилей с node_modules
 // import 'swiper/css';
 
-// Инициализация слайдеров
-function initSliders() {
-	// Список слайдеров
-	// Проверяем, есть ли слайдер на странице
-	if (document.querySelector(".hero__slider")) {
+if (document.querySelector(".hero__slider")) {
+	// Указываем скласс нужного слайдера
+	// Создаем слайдер
+	new Swiper(".hero__slider", {
 		// Указываем скласс нужного слайдера
-		// Создаем слайдер
-		new Swiper(".hero__slider", {
-			// Указываем скласс нужного слайдера
-			// Подключаем модули слайдера
-			// для конкретного случая
-			modules: [Navigation, Pagination, EffectFade, Autoplay],
-			observer: true,
-			observeParents: true,
-			slidesPerView: 1,
-			spaceBetween: 0,
-			speed: 800,
+		// Подключаем модули слайдера
+		// для конкретного случая
+		modules: [Navigation, Pagination, EffectFade, Autoplay],
+		observer: true,
+		observeParents: true,
+		slidesPerView: 1,
+		spaceBetween: 0,
+		speed: 800,
 
-			//touchRatio: 0,
-			//simulateTouch: false,
-			loop: true,
-			//preloadImages: false,
-			//lazy: true,
+		//touchRatio: 0,
+		//simulateTouch: false,
+		loop: true,
+		//preloadImages: false,
+		//lazy: true,
 
-			// Эффекты
-			effect: "fade",
-			autoplay: {
-				delay: 3000,
-				disableOnInteraction: false,
-			},
+		// Эффекты
+		effect: "fade",
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,
+		},
 
-			// Пагинация
+		// Пагинация
 
-			pagination: {
-				el: ".hero__pagination",
-				clickable: true,
-			},
+		pagination: {
+			el: ".hero__pagination",
+			clickable: true,
+		},
 
-			// Скроллбар
-			/*
+		// Скроллбар
+		/*
 			scrollbar: {
 				el: '.swiper-scrollbar',
 				draggable: true,
 			},
 			*/
 
-			// Кнопки "влево/вправо"
-			navigation: {
-				prevEl: ".hero__button-prev",
-				nextEl: ".hero__button-next",
-			},
-			/*
+		// Кнопки "влево/вправо"
+		navigation: {
+			prevEl: ".hero__button-prev",
+			nextEl: ".hero__button-next",
+		},
+		/*
 			// Брейкпоинты
 			breakpoints: {
 				640: {
@@ -97,6 +93,140 @@ function initSliders() {
 				},
 			},
 			*/
+		// События
+		on: {},
+	});
+}
+
+// Инициализация слайдеров
+function initSliders() {
+	// Список слайдеров
+	// Проверяем, есть ли слайдер на странице
+	if (document.querySelector(".main-experts__slider")) {
+		// Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper(".main-experts__slider", {
+			// Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			speed: 800,
+			// autoHeight: true,
+			//touchRatio: 0,
+			//simulateTouch: false,
+			// loop: true,
+			//preloadImages: false,
+			//lazy: true,
+
+			// Эффекты
+			// effect: "fade",
+			// autoplay: {
+			// 	delay: 3000,
+			// 	disableOnInteraction: false,
+			// },
+
+			// Пагинация
+
+			// pagination: {
+			// 	el: ".hero__pagination",
+			// 	clickable: true,
+			// },
+
+			// Скроллбар
+			/*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+			// Кнопки "влево/вправо"
+			navigation: {
+				prevEl: ".swiper-button-prev",
+				nextEl: ".swiper-button-next",
+			},
+
+			// Брейкпоинты
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 35,
+				},
+				480: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 40,
+				},
+			},
+
+			// События
+			on: {},
+		});
+	}
+
+	if (document.querySelector(".reviews__slider")) {
+		// Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper(".reviews__slider", {
+			// Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			speed: 800,
+			autoHeight: true,
+			//touchRatio: 0,
+			//simulateTouch: false,
+			// loop: true,
+			//preloadImages: false,
+			//lazy: true,
+
+			// Эффекты
+			// effect: "fade",
+			// autoplay: {
+			// 	delay: 3000,
+			// 	disableOnInteraction: false,
+			// },
+
+			// Пагинация
+
+			// pagination: {
+			// 	el: ".hero__pagination",
+			// 	clickable: true,
+			// },
+
+			// Скроллбар
+			/*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+			// Кнопки "влево/вправо"
+			navigation: {
+				prevEl: ".swiper-button-prev",
+				nextEl: ".swiper-button-next",
+			},
+
+			// Брейкпоинты
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 35,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 40,
+				},
+			},
+
 			// События
 			on: {},
 		});

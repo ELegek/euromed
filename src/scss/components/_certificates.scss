@@ -1,0 +1,28 @@
+.certificates {
+	&__body {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: 20px;
+
+		@media (max-width: $tablet) {
+			grid-template-columns: repeat(4, 1fr);
+			gap: 10px;
+		}
+
+		@media (max-width: $mobile) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@media (max-width: $mobileSmall) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	&__item {
+		border-radius: 20px;
+		overflow: hidden;
+		picture {
+			aspect-ratio: 1 / 1;
+			height: 216px;
+		}
+	}
+}
