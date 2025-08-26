@@ -8,7 +8,9 @@
     <div class="wrapper">
         @@include('html/_header.htm',{})
         <main class="page">
-            @@include('html/components/_breadcrumbs.htm',{})
+            @@include('html/components/_breadcrumbs.htm',{
+            "title":"О клинике"
+            })
             @@include('html/components/_about.htm',{})
         </main>
         @@include('html/_footer.htm',{})

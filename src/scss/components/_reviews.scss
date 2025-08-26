@@ -1,4 +1,9 @@
 .reviews {
+	&__body {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		gap: 20px;
+	}
 	&__slider {
 		position: relative;
 		padding: 0 20px;
