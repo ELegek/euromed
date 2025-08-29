@@ -1,0 +1,62 @@
+.video {
+	&__body {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 20px;
+	}
+	&__item {
+		position: relative;
+		display: block;
+		overflow: hidden;
+		border-radius: 20px;
+		cursor: pointer;
+
+		@media (any-hover: hover) {
+			&:hover {
+				.video__thumb {
+					transform: scale(1.05);
+				}
+				.video__play::before {
+					opacity: 1;
+				}
+			}
+		}
+
+		picture {
+			height: 280px;
+			img {
+				height: 280px;
+			}
+		}
+	}
+	&__thumb {
+		display: block;
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+	}
+	&__play {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 64px;
+		height: 64px;
+		background: rgba(255, 255, 255, 0.8);
+		border-radius: 50%;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-40%, -50%);
+			border-style: solid;
+			border-width: 12px 0 12px 20px;
+			border-color: transparent transparent transparent $accentColor;
+			opacity: 0.2;
+			transition: all 0.3s ease 0s;
+		}
+	}
+}

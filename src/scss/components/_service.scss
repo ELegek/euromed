@@ -1,0 +1,50 @@
+.service {
+	&__text {
+		padding: 60px;
+		border-radius: 40px;
+		background-color: #efefef;
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		gap: 20px;
+	}
+	&__item {
+		background-color: #f7f7f7;
+		border-radius: 20px;
+		padding: 13px 20px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			align-items: start;
+		}
+	}
+	&__name {
+		font-size: 16px;
+		color: $accentColor-2;
+		font-weight: 600;
+		line-height: 120%;
+	}
+	&__actions {
+		display: flex;
+		align-items: center;
+		gap: 30px;
+
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			gap: 20px;
+			align-items: start;
+		}
+
+		.price {
+			font-size: 20px;
+			font-weight: 500;
+			color: $accentColor;
+			white-space: nowrap;
+		}
+	}
+}
