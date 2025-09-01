@@ -1,0 +1,58 @@
+.expert {
+	&__wrapper {
+		display: grid;
+		grid-template-columns: 1fr 460px;
+		gap: 40px;
+
+		@media (max-width: $tablet) {
+			grid-template-columns: repeat(1, 1fr);
+			gap: 20px;
+		}
+	}
+	&__content {
+		@media (max-width: $tablet) {
+			display: contents;
+		}
+	}
+	&__header {
+		display: flex;
+		align-items: start;
+		flex-direction: column;
+		gap: 15px;
+		margin-bottom: 20px;
+		@media (max-width: $tablet) {
+			order: -1;
+		}
+	}
+	&__post {
+		color: $accentColor-2;
+		font-size: 16px;
+		line-height: 120%;
+	}
+	&__body {
+	}
+	&__experience {
+		color: $accentColor-2;
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 120%;
+		margin-bottom: 20px;
+	}
+	&__description {
+	}
+	&__media {
+		border-radius: 30px;
+		overflow: hidden;
+		picture {
+			height: 100%;
+		}
+		@media (max-width: $tablet) {
+			order: -1;
+			display: flex;
+			justify-content: center;
+			picture {
+				max-width: 460px;
+			}
+		}
+	}
+}

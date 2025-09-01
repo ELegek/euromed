@@ -67,7 +67,7 @@
 	font-weight: 500;
 	transition: all 0.3s ease 0s;
 	display: inline-block;
-
+	white-space: nowrap;
 	@media (any-hover: hover) {
 		&:hover {
 			background-color: #fff;
@@ -339,7 +339,7 @@ th {
 [data-editor] h4,
 [data-editor] h5,
 [data-editor] h6 {
-	color: $accentColor;
+	color: $accentColor-2;
 }
 [data-editor] h1 {
 	font-size: 30px;
