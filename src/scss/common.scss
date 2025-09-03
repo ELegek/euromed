@@ -1,7 +1,14 @@
 // Заголовки, общие БЕМ блоки и прочее...
 .section {
 	margin-top: 100px;
+	opacity: 0;
+	transform: translateY(40px);
+	transition: all 0.6s ease 0s;
 
+	&._watcher-view {
+		opacity: 1;
+		transform: translateY(0);
+	}
 	@media (max-width: $tablet) {
 		margin-top: 60px;
 	}

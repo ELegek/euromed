@@ -26,12 +26,26 @@ btnService.forEach((btn) => {
 	});
 });
 
+const btnProduct = document.querySelectorAll("[data-product]");
+const popupProduct = document.querySelector("#product");
+const nameProduct = popupProduct.querySelector(".name");
+const hiddenName = popupProduct.querySelector('input[name="product_name"]');
+
+btnProduct.forEach((btn) => {
+	btn.addEventListener("click", () => {
+		const productName = btn.dataset.name;
+		nameProduct.textContent = productName;
+		hiddenName.value = productName;
+		Fancybox.show([{ src: "#product", type: "inline" }]);
+	});
+});
+
 // Popup успешной отправки формы
 window.addEventListener(
 	"wpcf7mailsent",
 	function (event) {
 		Fancybox.close();
-		Fancybox.show([{ src: "#feedback-success", type: "inline" }]);
+		Fancybox.show([{ src: "#success", type: "inline" }]);
 	},
 	false
 );
