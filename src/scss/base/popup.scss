@@ -1,61 +1,102 @@
-body::after {
-	content: "";
-	background-color: rgba(0, 0, 0, 0.5);
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	transition: opacity 0.8s ease 0s;
-	pointer-events: none;
-	z-index: 149;
+.fancybox__backdrop {
+	background: rgba(24, 24, 27, 0.4) !important;
 }
-.popup-show body::after {
+#call,
+#service {
+	padding: 50px 60px;
+	border-radius: 24px;
+	max-width: 560px;
+	border: none;
+	@media (max-width: $mobile) {
+		padding: 40px 20px;
+	}
+}
+
+.popup {
+	&__body {
+		.btn {
+			width: 100%;
+		}
+	}
+	&__title {
+		font-size: 28px;
+		color: $accentColor-2;
+		font-weight: 700;
+		line-height: 120%;
+		margin-bottom: 5px;
+
+		@media (max-width: $mobile) {
+			font-size: 24px;
+		}
+	}
+	&__subtitle {
+		margin-bottom: 30px;
+	}
+}
+
+.form-consent {
+	margin-bottom: 20px;
+}
+
+.custom-checkbox {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	cursor: pointer;
+	user-select: none;
+}
+
+.custom-checkbox input[type="checkbox"] {
+	display: none;
+}
+
+.checkbox-box {
+	width: 20px;
+	height: 20px;
+	border: 2px solid #999;
+	border-radius: 4px;
+	position: relative;
+	flex-shrink: 0;
+	transition:
+		border-color 0.3s,
+		background-color 0.3s;
+}
+
+.checkbox-box::after {
+	content: "";
+	position: absolute;
+	top: 2px;
+	left: 6px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+
+input[type="checkbox"]:checked + .checkbox-box {
+	background-color: $accentColor;
+	border-color: $accentColor;
+}
+
+input[type="checkbox"]:checked + .checkbox-box::after {
 	opacity: 1;
 }
-.popup {
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	padding: 30px 10px;
-	transition: visibility 0.8s ease 0s;
-	visibility: hidden;
-	pointer-events: none;
+
+.checkbox-text {
+	font-size: 14px;
+	color: #969696;
 }
-.popup_show {
-	z-index: 150;
-	visibility: visible;
-	overflow: auto;
-	pointer-events: auto;
+
+.checkbox-text a {
+	color: $accentColor;
+	text-decoration: underline;
 }
-.popup_show .popup__content {
-	visibility: visible;
-	transform: scale(1);
-}
-.popup__wrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	min-height: 100%;
-	flex: 1 1 auto;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.popup__content {
-	visibility: hidden;
-	transform: scale(0);
-	transition: transform 0.3s ease 0s;
-	background-color: #eee;
-	padding: 20px;
-	width: 100%;
-	max-width: 900px;
-	border-radius: 20px;
-	.lock & {
-		visibility: visible;
-	}
+
+button[disabled] {
+	transition: all 0.3s ease 0s;
+	opacity: 0.6;
+	cursor: not-allowed;
 }

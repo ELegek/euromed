@@ -9,11 +9,13 @@ textarea {
 	appearance: none;
 }
 .input {
-	border-radius: 0 !important;
 	width: 100%;
+	border: 1px solid #cdcdcd;
+	border-radius: 15px;
+	padding: 18px 30px;
+	outline: none;
 	display: block;
-	padding: 0px 20px;
-	border: 1px solid #eee;
+	margin-bottom: 20px;
 	&._form-focus {
 	}
 	&._form-error {
@@ -22,6 +24,7 @@ textarea {
 .input[placeholder]:not([data-placeholder-nohiden]) {
 	&::placeholder {
 		transition: opacity 0.3s;
+		color: #656565;
 	}
 	&:focus::placeholder {
 		opacity: 0;
