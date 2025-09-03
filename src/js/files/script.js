@@ -35,3 +35,20 @@ document.querySelectorAll(".menu__list .arrow").forEach((arrow) => {
 		parentLi.classList.toggle("_open");
 	});
 });
+
+document.querySelectorAll("form").forEach(function (form) {
+	const checkbox = form.querySelector('input[type="checkbox"][name="personal_data_agreement"]');
+	const button = form.querySelector('button[type="submit"]');
+
+	if (!checkbox || !button) return;
+
+	const toggleButton = () => {
+		button.disabled = !checkbox.checked;
+	};
+
+	// Инициализация состояния при загрузке
+	toggleButton();
+
+	// Слушаем изменение чекбокса
+	checkbox.addEventListener("change", toggleButton);
+});

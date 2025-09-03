@@ -1,10 +1,42 @@
-<div id="popup" aria-hidden="true" class="popup">
-	<div class="popup__wrapper">
-		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрити</button>
-			<div class="popup__text">
-				Text
-			</div>
-		</div>
-	</div>
-</div>
+<dialog id="call" style="display:none;">
+    <div class="popup__body">
+        <div class="popup__title">Записаться на прием</div>
+        <div class="popup__subtitle">Заполните форму и мы перезвоним вам в ближайшее время</div>
+        <form method="POST">
+            <input type="text" name="email" placeholder="Имя" class="input" required>
+            <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" class="input" required>
+            <div class="form-consent">
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="personal_data_agreement" required>
+                    <span class="checkbox-box"></span>
+                    <span class="checkbox-text">
+                        Нажимая на кнопку "Записаться" вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
+                    </span>
+                </label>
+            </div>
+            <button type="submit" class="btn btn-pink" disabled>Записаться</button>
+        </form>
+    </div>
+</dialog>
+
+<dialog id="service" style="display:none;">
+    <div class="popup__body">
+        <div class="popup__title">Записаться на процедуру <span class="name"></span></div>
+        <div class="popup__subtitle">Заполните форму и мы перезвоним вам в ближайшее время</div>
+        <form method="POST">
+            <input type="hidden" name="service_name" value="">
+            <input type="text" name="email" placeholder="Имя" class="input" required>
+            <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" class="input" required>
+            <div class="form-consent">
+                <label class="custom-checkbox">
+                    <input type="checkbox" name="personal_data_agreement" required>
+                    <span class="checkbox-box"></span>
+                    <span class="checkbox-text">
+                        Нажимая на кнопку "Записаться" вы соглашаетесь с <a href="#">политикой конфиденциальности</a>
+                    </span>
+                </label>
+            </div>
+            <button type="submit" class="btn btn-pink" disabled>Записаться</button>
+        </form>
+    </div>
+</dialog>

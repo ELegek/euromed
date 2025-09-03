@@ -1,0 +1,35 @@
+.product {
+	&__body {
+		display: grid;
+		grid-template-columns: 460px 1fr;
+		gap: 40px;
+
+		@media (max-width: $tablet) {
+			grid-template-columns: 350px 1fr;
+		}
+
+		@media (max-width: $mobile) {
+			grid-template-columns: repeat(1, 1fr);
+			gap: 20px;
+		}
+	}
+	&__media {
+	}
+	&__content {
+		@media (max-width: $mobile) {
+			display: contents;
+
+			.section__header {
+				order: -1;
+			}
+		}
+	}
+	&__price {
+		font-size: 28px;
+		font-weight: 500;
+		margin-bottom: 20px;
+	}
+	&__descr {
+		margin-top: 20px;
+	}
+}
