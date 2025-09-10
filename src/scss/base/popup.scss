@@ -4,7 +4,8 @@
 #call,
 #service,
 #product,
-#success {
+#success,
+#reviews {
 	padding: 50px 60px;
 	border-radius: 24px;
 	max-width: 560px;
@@ -36,7 +37,7 @@
 		color: $accentColor-2;
 		font-weight: 700;
 		line-height: 120%;
-		margin-bottom: 5px;
+		margin-bottom: 15px;
 
 		@media (max-width: $mobile) {
 			font-size: 24px;

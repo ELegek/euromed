@@ -12,6 +12,13 @@ btnCall.forEach((btn) => {
 	});
 });
 
+const btnReviews = document.querySelectorAll("[data-reviews]");
+btnReviews.forEach((btn) => {
+	btn.addEventListener("click", () => {
+		Fancybox.show([{ src: "#reviews", type: "inline" }]);
+	});
+});
+
 const btnService = document.querySelectorAll("[data-service]");
 const popup = document.querySelector("#service");
 const spanName = popup.querySelector(".name");
