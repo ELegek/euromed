@@ -300,6 +300,10 @@ svg {
 	}
 }
 
+.swiper-pagination-lock {
+	display: none !important;
+}
+
 // Animation ===========================
 @keyframes FadeInTop {
 	from {
@@ -439,7 +443,7 @@ th {
 }
 
 [data-editor] a:not([class*="button"]) {
-	color: #b21f22;
+	color: $accentColor;
 	text-decoration: underline;
 	transition: color 0.2s ease;
 }

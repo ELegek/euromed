@@ -23,6 +23,9 @@
 		border: 1px solid $accentColor-2;
 	}
 	&__media {
+		picture {
+			height: 140px;
+		}
 	}
 
 	&__descr {
@@ -55,6 +58,14 @@
 
 	&__media {
 		margin-bottom: 12px;
+
+		picture {
+			height: 360px;
+
+			@media (max-width: $mobileSmall) {
+				height: 280px;
+			}
+		}
 	}
 	&__content {
 		flex: 1 1 auto;

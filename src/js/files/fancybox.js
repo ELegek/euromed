@@ -48,11 +48,21 @@ btnProduct.forEach((btn) => {
 });
 
 // Popup успешной отправки формы
-window.addEventListener(
-	"wpcf7mailsent",
-	function (event) {
+export function showSuccessPopup() {
+	// Закрываем текущее модальное окно (если открыто)
+	Fancybox.close();
+
+	// Показываем попап с id="success"
+	Fancybox.show([
+		{
+			src: "#success",
+			type: "inline",
+		},
+	]);
+
+	setTimeout(() => {
 		Fancybox.close();
-		Fancybox.show([{ src: "#success", type: "inline" }]);
-	},
-	false
-);
+	}, 3000);
+}
+
+window.showSuccessPopup = showSuccessPopup;
