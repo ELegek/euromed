@@ -12,6 +12,13 @@ btnCall.forEach((btn) => {
 	});
 });
 
+const btnReviews = document.querySelectorAll("[data-reviews]");
+btnReviews.forEach((btn) => {
+	btn.addEventListener("click", () => {
+		Fancybox.show([{ src: "#reviews", type: "inline" }]);
+	});
+});
+
 const btnService = document.querySelectorAll("[data-service]");
 const popup = document.querySelector("#service");
 const spanName = popup.querySelector(".name");
@@ -26,12 +33,36 @@ btnService.forEach((btn) => {
 	});
 });
 
+const btnProduct = document.querySelectorAll("[data-product]");
+const popupProduct = document.querySelector("#product");
+const nameProduct = popupProduct.querySelector(".name");
+const hiddenName = popupProduct.querySelector('input[name="product_name"]');
+
+btnProduct.forEach((btn) => {
+	btn.addEventListener("click", () => {
+		const productName = btn.dataset.name;
+		nameProduct.textContent = productName;
+		hiddenName.value = productName;
+		Fancybox.show([{ src: "#product", type: "inline" }]);
+	});
+});
+
 // Popup успешной отправки формы
-window.addEventListener(
-	"wpcf7mailsent",
-	function (event) {
+export function showSuccessPopup() {
+	// Закрываем текущее модальное окно (если открыто)
+	Fancybox.close();
+
+	// Показываем попап с id="success"
+	Fancybox.show([
+		{
+			src: "#success",
+			type: "inline",
+		},
+	]);
+
+	setTimeout(() => {
 		Fancybox.close();
-		Fancybox.show([{ src: "#feedback-success", type: "inline" }]);
-	},
-	false
-);
+	}, 3000);
+}
+
+window.showSuccessPopup = showSuccessPopup;

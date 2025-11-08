@@ -8,7 +8,14 @@
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
 import Swiper from "swiper";
-import { Navigation, Scrollbar, Pagination, Thumbs, EffectFade, Autoplay } from "swiper/modules";
+import {
+	Navigation,
+	Scrollbar,
+	Pagination,
+	Thumbs,
+	EffectFade,
+	Autoplay,
+} from "swiper/modules";
 /*
 Основные модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -37,7 +44,7 @@ if (document.querySelector(".hero__slider")) {
 		slidesPerView: 1,
 		spaceBetween: 0,
 		speed: 800,
-
+		autoHeight: true,
 		//touchRatio: 0,
 		//simulateTouch: false,
 		loop: true,
@@ -47,7 +54,7 @@ if (document.querySelector(".hero__slider")) {
 		// Эффекты
 		effect: "fade",
 		autoplay: {
-			delay: 3000,
+			delay: 5000,
 			disableOnInteraction: false,
 		},
 
@@ -238,7 +245,8 @@ function initSlidersScroll() {
 	if (sliderScrollItems.length > 0) {
 		for (let index = 0; index < sliderScrollItems.length; index++) {
 			const sliderScrollItem = sliderScrollItems[index];
-			const sliderScrollBar = sliderScrollItem.querySelector(".swiper-scrollbar");
+			const sliderScrollBar =
+				sliderScrollItem.querySelector(".swiper-scrollbar");
 			const sliderScroll = new Swiper(sliderScrollItem, {
 				observer: true,
 				observeParents: true,

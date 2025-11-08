@@ -1,7 +1,14 @@
 // Заголовки, общие БЕМ блоки и прочее...
 .section {
 	margin-top: 100px;
+	opacity: 0;
+	transform: translateY(40px);
+	transition: all 0.6s ease 0s;
 
+	&._watcher-view {
+		opacity: 1;
+		transform: translateY(0);
+	}
 	@media (max-width: $tablet) {
 		margin-top: 60px;
 	}
@@ -293,6 +300,10 @@ svg {
 	}
 }
 
+.swiper-pagination-lock {
+	display: none !important;
+}
+
 // Animation ===========================
 @keyframes FadeInTop {
 	from {
@@ -432,7 +443,7 @@ th {
 }
 
 [data-editor] a:not([class*="button"]) {
-	color: #b21f22;
+	color: $accentColor;
 	text-decoration: underline;
 	transition: color 0.2s ease;
 }
