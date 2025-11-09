@@ -3,6 +3,10 @@
 		padding: 60px;
 		border-radius: 40px;
 		background-color: #efefef;
+
+		@media (max-width: $mobile) {
+			padding: 20px;
+		}
 	}
 	&__list {
 		display: grid;
