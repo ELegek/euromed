@@ -23,6 +23,10 @@
 		picture {
 			aspect-ratio: 1.3;
 
+			@media (max-width: $mobileSmall) {
+				aspect-ratio: auto;
+			}
+
 			img {
 				height: 210px;
 

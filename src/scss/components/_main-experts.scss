@@ -44,16 +44,14 @@
 		overflow: hidden;
 
 		@media (max-width: $mobileSmall) {
-			height: auto;
+			height: 250px;
 		}
 		picture {
-			aspect-ratio: 1;
+			height: 100%;
+
 			img {
-				height: 360px;
+				height: 100%;
 				transition: all 0.3s ease 0s;
-				@media (max-width: $mobileSmall) {
-					height: auto;
-				}
 			}
 		}
 	}
